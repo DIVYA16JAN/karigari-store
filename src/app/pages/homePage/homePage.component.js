@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MenuList from "../../oraganisms/menuList/menuList.component";
+import MenuList from "../../organisms/menuList/menuList.component";
 
 class HomePage extends Component {
   constructor(props) {

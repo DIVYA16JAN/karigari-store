@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import FormInput from "./../form-input/form-input.component";
+import FormInput from "./../../molecules/form-input/form-input.component";
 import CustomButton from "./../../atoms/custom-button/custom-button.component";
-import { signInWithGoogle } from "./../../utils/firebase/firebase.utils";
+import { auth, signInWithGoogle } from "./../../utils/firebase/firebase.utils";
 
 class SignIn extends Component {
   constructor(props) {
@@ -12,12 +12,18 @@ class SignIn extends Component {
     };
   }
 
-  OnSubmitHandler = (event) => {
+  OnSubmitHandler = async (event) => {
     event.preventDefault();
-    this.setState({
-      email: "",
-      password: "",
-    });
+
+    const { email, password } = this.state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+    
+      this.setState({ email: "", password: "" });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   ChangeHandler = (event) => {
@@ -36,17 +42,17 @@ class SignIn extends Component {
           <FormInput
             name="email"
             type="email"
-            label="Email"
             value={this.state.email}
             ChangeHandler={this.ChangeHandler}
-            reguired
+            label="Email"
+            required
           />
           <FormInput
             name="password"
             type="password"
-            label="Password"
             value={this.state.password}
             ChangeHandler={this.ChangeHandler}
+            label="Password"
             required
           />
           <div className="buttons">
