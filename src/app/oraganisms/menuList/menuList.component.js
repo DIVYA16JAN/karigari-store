@@ -1,11 +1,5 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import MenuItem from "../../molecules/menuItem/menuItem.component";
-import potsPlanterImage from '../../../assets/images/pots_planters.jpg';
-import wallHangingImage from '../../../assets/images/wall_hangings.jpg';
-import tablewareImage from '../../../assets/images/tableware.jpg';
-import decorImage from '../../../assets/images/decor.jpg';
-import accessoryImage from '../../../assets/images/accessory.jpg';
-
 
 class MenuList extends Component {
   constructor() {
@@ -13,34 +7,36 @@ class MenuList extends Component {
     this.state = {
       menuList: [
         {
-          title: "Pots & Planters",
-          key: "1",
-          imageUrl: potsPlanterImage,
-          linkUrl: 'potsPlanters'
+          title: "hats",
+          imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
+          id: 1,
+          linkUrl: "hats",
         },
         {
-          title: "Wall Hangings",
-          key: "2",
-          imageUrl: wallHangingImage,
-          linkUrl: 'wallHangings'
+          title: "jackets",
+          imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
+          id: 2,
+          linkUrl: "",
         },
         {
-          title: "Tableware",
-          key: "3",
-          imageUrl: tablewareImage,
-          linkUrl: 'tableware'
+          title: "sneakers",
+          imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+          id: 3,
+          linkUrl: "",
         },
         {
-          title: "decor",
-          key: "4",
-          imageUrl: decorImage,
-          linkUrl: 'decor'
+          title: "womens",
+          imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+          size: "large",
+          id: 4,
+          linkUrl: "",
         },
         {
-          title: "Accessories",
-          key: "5",
-          imageUrl: accessoryImage,
-          linkUrl: 'accessories'
+          title: "mens",
+          imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+          size: "large",
+          id: 5,
+          linkUrl: "",
         },
       ],
     };
@@ -49,8 +45,8 @@ class MenuList extends Component {
   render() {
     return (
       <div className="menuList-container">
-        {this.state.menuList.map(({key, ...otherProps}) => (
-          <MenuItem key={key} {...otherProps}/>
+        {this.state.menuList.map(({ id, ...otherProps }) => (
+          <MenuItem key={id} {...otherProps} />
         ))}
       </div>
     );

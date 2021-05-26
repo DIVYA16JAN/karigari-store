@@ -1,8 +1,27 @@
-@import '../app/molecules/menuItem/menuItem.style.scss';
-@import '../app/oraganisms/menuList/menuList.style.scss';
 @import '../app/pages/homePage/homePage.style.scss';
+@import '../app/pages/loginPage/loginPage.style.scss';
+
+@import '../app/oraganisms/menuList/menuList.style.scss';
+@import '../app/oraganisms/collections/collection.style.scss';
+
+@import '../app/molecules/menuItem/menuItem.style.scss';
+@import '../app/molecules/collectionItem/collectionItem.style.scss';
+@import '../app/molecules/header/header.style.scss';
+@import '../app/molecules/signIn/signIn.style.scss';
+@import '../app/molecules/form-input/form-input.style.scss';
+
+@import '../app/atoms/custom-button/custom-button.style.scss';
 
 body {
     font-family: 'Xanh Mono';
-    background: #fbe780;
+    //background: #fbe780;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  * {
+    box-sizing: border-box;
   }

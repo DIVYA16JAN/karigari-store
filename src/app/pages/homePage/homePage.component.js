@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import MenuList from '../../oraganisms/menuList/menuList.component';
+import MenuList from "../../oraganisms/menuList/menuList.component";
 
 class HomePage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
 
   render() {
     return (
-      <div className="homePage-container container">
-        <MenuList/>
+      <div className="homePage">
+        <MenuList />
       </div>
     );
   }
